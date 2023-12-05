@@ -6,7 +6,7 @@
     <!-- Using CDN for Socket.io client -->
     <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
     <script>
-        var socket = io('http://localhost:3001');
+        var socket = io('https://moveo-backend-81c8a5aa18ef.herokuapp.com/');
         // Function to retrieve room number from the URL
         function getRoomNumber() {
             var urlParams = new URLSearchParams(window.location.search);
@@ -59,7 +59,7 @@
         document.addEventListener('DOMContentLoaded', function() {
         var urlParams = new URLSearchParams(window.location.search);
         var room = urlParams.get('room');
-        fetch(`http://localhost:3001/visits?room=${encodeURIComponent(room)}`)
+        fetch(`https://moveo-backend-81c8a5aa18ef.herokuapp.com/visits?room=${encodeURIComponent(room)}`)
                 .then(response => response.json())
                 .then(data => {
                     var textArea = document.getElementById('sharedTextArea');
